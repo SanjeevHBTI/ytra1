@@ -54,7 +54,10 @@ def processRequest(req):
     if req.get("result").get("action") != "yahooWeatherForecast":
         return {}
     baseurl = "https://query.yahooapis.com/v1/public/yql?"
-    
+    res = makeWebhookResult_1(baseurl)
+    return res    
+
+
     '''
     baseurl = "https://flight.yatra.com/air-service/dom2/search?type=O&viewName=normal&flexi=0&noOfSegments=1&origin=DEL&originCountry=IN&destination=BLR&destinationCountry=IN&flight_depart_date=18/11/2017&ADT=1&CHD=0&INF=0&class=Economy&source=fresco-homeUrl"
     response = request.post(url = url) 
@@ -62,7 +65,7 @@ def processRequest(req):
     res = makeWebhookResult(response)
     return res
 	
-    '''
+    
     yql_query = makeYqlQuery(req)
     if yql_query is None:
         return {}
@@ -71,7 +74,7 @@ def processRequest(req):
     data = json.loads(result)
     res = makeWebhookResult(data)
     return res
-    
+    '''    
 
 def makeYqlQuery(req):
     result = req.get("result")

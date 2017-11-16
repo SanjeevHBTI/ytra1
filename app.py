@@ -86,7 +86,8 @@ def makeYqlQuery(req):
 
 
 def makeWebhookResult_1(data):
-    speech = data
+    #speech = data
+    speech = "API Working fine"
 
     print("Response:")
     print(speech)

@@ -61,7 +61,7 @@ def processRequest(req):
 #     yql_query = "type=O&viewName=normal&flexi=0&noOfSegments=1&origin=DEL&originCountry=IN&destination=BLR&destinationCountry=IN&flight_depart_date=21/11/2017&ADT=1&CHD=0&INF=0&class=Economy&source=fresco-homeUrl"
     
     yql_query = makeYqlQuery(req)
-    yql_url = baseurl + urlencode({'q': yql_query}) + "&format=json"
+    yql_url = baseurl + urlencode({'type':O,'viewName':normal,'flexi':0,'noOfSegments':1,'origin':DEL,'originCountry':IN,'destination':BLR,'destinationCountry':IN,'flight_depart_date':21/11/2017,'ADT':1,'CHD':0,'INF':0,'class':Economy,'source':fresco-homeUrl}) + "&format=json"
     result = urlopen(yql_url).read()
     data = json.loads(result)
     

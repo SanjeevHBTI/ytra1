@@ -61,7 +61,11 @@ def processRequest(req):
     data = json.loads(result)
     # data
     data['airportName']['DEL']
-    res = makeWebhookResult_1(data['airportName']['DEL'])
+    #res = makeWebhookResult_1(data['airportName']['DEL'])
+    
+    data1 = "Hello API IS Working Fine "
+    res = makeWebhookResult_1(data1)
+    
     return res
      
     '''

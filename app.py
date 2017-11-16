@@ -56,19 +56,20 @@ def processRequest(req):
     #baseurl = "https://query.yahooapis.com/v1/public/yql?"
     
     
-    baseurl = "https://flight.yatra.com/air-service/dom2/search?"
+#     baseurl = "https://flight.yatra.com/air-service/dom2/search?"
     
 #     type=O&viewName=normal&flexi=0&noOfSegments=1&origin=DEL&originCountry=IN&destination=BLR&destinationCountry=IN&flight_depart_date=21/11/2017&ADT=1&CHD=0&INF=0&class=Economy&source=fresco-homeUrl"
     
 #     yql_query = "type=O&viewName=normal&flexi=0&noOfSegments=1&origin=DEL&originCountry=IN&destination=BLR&destinationCountry=IN&flight_depart_date=21/11/2017&ADT=1&CHD=0&INF=0&class=Economy&source=fresco-homeUrl"
     
-    yql_query = makeYqlQuery(req)
-    yql_url = baseurl + urlencode({'type':O,'viewName':normal,'flexi':0,'noOfSegments':1,'origin':DEL,'originCountry':IN,'destination':BLR,'destinationCountry':IN,'flight_depart_date':21/11/2017,'ADT':1,'CHD':0,'INF':0,'class':Economy,'source':fresco-homeUrl}) + "&format=json"
-    result = urlopen(yql_url).read()
-    data = json.loads(result)
+#     yql_query = makeYqlQuery(req)
+#     yql_url = baseurl + urlencode({'type':O,'viewName':normal,'flexi':0,'noOfSegments':1,'origin':DEL,'originCountry':IN,'destination':BLR,'destinationCountry':IN,'flight_depart_date':21/11/2017,'ADT':1,'CHD':0,'INF':0,'class':Economy,'source':fresco-homeUrl}) + "&format=json"
+#     result = urlopen(yql_url).read()
+#     data = json.loads(result)
     
     #data['airportName']['DEL']
-    res = makeWebhookResult_1(data['airportName']['DEL'])
+    data = "Hello"
+    res = makeWebhookResult_1(data)
     
     #res = makeWebhookResult_1(data)
     return res

@@ -53,18 +53,19 @@ def webhook():
 def processRequest(req):
     if req.get("result").get("action") != "yahooWeatherForecast":
         return {}
-    #baseurl = "https://query.yahooapis.com/v1/public/yql?"
+    baseurl = "https://query.yahooapis.com/v1/public/yql?"
     
+    '''
     baseurl = "https://flight.yatra.com/air-service/dom2/search?type=O&viewName=normal&flexi=0&noOfSegments=1&origin=DEL&originCountry=IN&destination=BLR&destinationCountry=IN&flight_depart_date=18/11/2017&ADT=1&CHD=0&INF=0&class=Economy&source=fresco-homeUrl"
     yql_url = baseurl + "&format=json"
     result = urlopen(yql_url).read()
     data = json.loads(result)
     
-    # data
+    #data
     #data['airportName']['DEL']
     #res = makeWebhookResult_1(data['airportName']['DEL'])
     
-    data1 = "Hello API IS Working Fine "
+    data1 = "a"
     res = makeWebhookResult_1(data1)
     
     return res
@@ -76,9 +77,9 @@ def processRequest(req):
     yql_url = baseurl + urlencode({'q': yql_query}) + "&format=json"
     result = urlopen(yql_url).read()
     data = json.loads(result)
-    res = makeWebhookResult(data)
+    res = makeWebhookResult_1(data)
     return res
-    '''
+    
 
 def makeYqlQuery(req):
     result = req.get("result")
@@ -92,7 +93,7 @@ def makeYqlQuery(req):
 
 def makeWebhookResult_1(data1):
     #speech = data
-    speech = "API Working fine"
+    speech = "API Is Working fine"
 
     print("Response:")
     print(speech)

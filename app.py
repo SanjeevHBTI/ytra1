@@ -53,7 +53,9 @@ def webhook():
 def processRequest(req):
     if req.get("result").get("action") != "yahooWeatherForecast":
         return {}
-    #baseurl = "https://query.yahooapis.com/v1/public/yql?"
+    baseurl = "https://query.yahooapis.com/v1/public/yql?"
+    
+    '''
     baseurl = "https://flight.yatra.com/air-service/dom2/search?type=O&viewName=normal&flexi=0&noOfSegments=1&origin=DEL&originCountry=IN&destination=BLR&destinationCountry=IN&flight_depart_date=18/11/2017&ADT=1&CHD=0&INF=0&class=Economy&source=fresco-homeUrl"
     response = request.post(url = url) 
 	
@@ -69,7 +71,7 @@ def processRequest(req):
     data = json.loads(result)
     res = makeWebhookResult(data)
     return res
-    '''
+    
 
 def makeYqlQuery(req):
     result = req.get("result")
@@ -81,7 +83,7 @@ def makeYqlQuery(req):
     return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
 
 
-def makeWebhookResult(data):
+def makeWebhookResult_1(data):
     speech = "API Testing Working Fine "
 
     print("Response:")
@@ -96,7 +98,7 @@ def makeWebhookResult(data):
     }
 
 
-def makeWebhookResult_1(data):
+def makeWebhookResult(data):
     query = data.get('query')
     if query is None:
         return {}

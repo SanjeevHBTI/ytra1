@@ -89,7 +89,7 @@ def makeYqlQuery(req):
     return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
 
 
-def makeWebhookResult_1(data):
+def makeWebhookResult_1(data1):
     #speech = data
     speech = "API Working fine"
 

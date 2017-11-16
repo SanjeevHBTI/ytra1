@@ -62,9 +62,9 @@ def processRequest(req):
     data = json.loads(result)
     
     #data['airportName']['DEL']
-    #res = makeWebhookResult_1(data['airportName']['DEL'])
+    res = makeWebhookResult_1(data['airportName']['DEL'])
     
-    res = makeWebhookResult_1(data)
+    #res = makeWebhookResult_1(data)
     return res
      
     '''
@@ -77,17 +77,6 @@ def processRequest(req):
     res = makeWebhookResult_1(data)
     return res
     '''
-    
-
-def makeYqlQuery(req):
-    result = req.get("result")
-    parameters = result.get("parameters")
-    city = parameters.get("geo-city")
-    if city is None:
-        return None
-
-    return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
-
 
 def makeWebhookResult_1(data1):
     #speech = data
@@ -104,6 +93,14 @@ def makeWebhookResult_1(data1):
         "source": "apiai-weather-webhook-sample"
     }
 
+def makeYqlQuery(req):
+    result = req.get("result")
+    parameters = result.get("parameters")
+    city = parameters.get("geo-city")
+    if city is None:
+        return None
+
+    return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
 
 def makeWebhookResult(data):
     query = data.get('query')

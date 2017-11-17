@@ -68,7 +68,7 @@ def processRequest(req):
 #     data = json.loads(result)
     
     #data['airportName']['DEL']
-    data = "Hello"
+    data = "Hello API is working fine"
     res = makeWebhookResult_1(data)
     
     #res = makeWebhookResult_1(data)
@@ -86,9 +86,9 @@ def processRequest(req):
     '''
     
 
-def makeWebhookResult_1(data1):
-    #speech = data
-    speech = "API Is Working fine"
+def makeWebhookResult_1(data):
+    speech = data
+#     speech = "API Is Working fine"
 
     print("Response:")
     print(speech)

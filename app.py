@@ -56,13 +56,13 @@ def processRequest(req):
     #baseurl = "https://query.yahooapis.com/v1/public/yql?"
     
     
-#     baseurl = "https://flight.yatra.com/air-service/dom2/search?type=O&viewName=normal&flexi=0&noOfSegments=1&origin=DEL&originCountry=IN&destination=BLR&destinationCountry=IN&flight_depart_date=18/11/2017&ADT=1&CHD=0&INF=0&class=Economy&source=fresco-homeUrl"
-    
+    baseurl = "https://flight.yatra.com/air-service/dom2/search?type=O&viewName=normal&flexi=0&noOfSegments=1&origin=DEL&originCountry=IN&destination=BLR&destinationCountry=IN&flight_depart_date=18/11/2017&ADT=1&CHD=0&INF=0&class=Economy&source=fresco-homeUrl"
+    '''
     baseurl = "https://maps.googleapis.com/maps/api/geocode/json?latlng=28.7041,77.1025"
     yql_url = baseurl + "&format=json"
     result = urlopen(yql_url).read()
     data1 = json.loads(result)
-    
+    '''
 
 #     yql_query = makeYqlQuery(req)
 #     yql_url = baseurl + urlencode({'type':O,'viewName':normal,'flexi':0,'noOfSegments':1,'origin':DEL,'originCountry':IN,'destination':BLR,'destinationCountry':IN,'flight_depart_date':21/11/2017,'ADT':1,'CHD':0,'INF':0,'class':Economy,'source':fresco-homeUrl}) + "&format=json"

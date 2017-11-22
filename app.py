@@ -51,24 +51,21 @@ def webhook():
 
 
 def processRequest(req):
-    if req.get("result").get("action") != "yahooWeatherForecast":
+    if req.get("result").get("action") != "yatraFlightBooking":
         return {}
-    #baseurl = "https://query.yahooapis.com/v1/public/yql?"
-    
+  
     baseurl = "https://maps.googleapis.com/maps/api/geocode/json?latlng=28.7041,77.1025"
     yql_url = baseurl + "&format=json"
     result = urlopen(yql_url).read()
     data1 = json.loads(result)
     
-    data = "https://www.yatra.com/"
-#     res = makeWebhookResult_1(data1['results'][0]['address_components'][1]['long_name'])
+#     data = "https://www.yatra.com/"
+    data = "https://flight.yatra.com/air-search-ui/dom2/trigger?ADT=1&CHD=0&INF=0&arrivalDate=23/11/2017&class=Economy&destination=BOM&destinationCountry=IN&flexi=0&flight_depart_date=22/11/2017&noOfSegments=2&origin=DEL&originCountry=IN&source=fresco-home&type=R&version=1.1&viewName=normal"
     res = makeWebhookResult_1(data)
     return res
 
 def makeWebhookResult_1(data):
     speech = data
-#     speech = "API Is Working fine"
-
     print("Response:")
     print(speech)
 

@@ -60,10 +60,9 @@ def processRequest(req):
     result = urlopen(yql_url).read()
     data1 = json.loads(result)
     
-#     data = "Hello API is working fine"
-    res = makeWebhookResult_1(data1['results'][0]['address_components'][1]['long_name'])
-    res = makeWebhookResult_1("https://www.yatra.com/")
-    
+    data = "https://www.yatra.com/"
+#     res = makeWebhookResult_1(data1['results'][0]['address_components'][1]['long_name'])
+    res = makeWebhookResult_1(data)
     return res
 
 def makeWebhookResult_1(data):

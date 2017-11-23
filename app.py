@@ -63,11 +63,13 @@ def processRequest(req):
     res = makeWebhookResult_1(data)
     '''
     
+    baseurl = "https://maps.googleapis.com/maps/api/geocode/json?latlng=28.7041,77.1025"
     ShrutiUrl = "https://api.yatra.com/botplatform/flights/search?apikey=4J6CE8N3241kGXujS8DQ"
-    yql_url = ShrutiUrl + "&format=json"
+    yql_url = baseurl + "&format=json"
     result = urlopen(yql_url).read()
-    res = makeWebhookResult_1(result)
-        
+    data = json.loads(result)
+    
+    res = makeWebhookResult_1(data['data']['content']['address'])
     return res
 
 def makeWebhookResult_1(data):

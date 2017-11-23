@@ -53,15 +53,22 @@ def webhook():
 def processRequest(req):
     if req.get("result").get("action") != "yatraFlightBooking":
         return {}
-  
+    
+    '''
     baseurl = "https://maps.googleapis.com/maps/api/geocode/json?latlng=28.7041,77.1025"
     yql_url = baseurl + "&format=json"
     result = urlopen(yql_url).read()
     data1 = json.loads(result)
     
-#     data = "https://www.yatra.com/"
     data = "https://flight.yatra.com/air-search-ui/dom2/trigger?ADT=1&CHD=0&INF=0&arrivalDate=23/11/2017&class=Economy&destination=BOM&destinationCountry=IN&flexi=0&flight_depart_date=22/11/2017&noOfSegments=2&origin=DEL&originCountry=IN&source=fresco-home&type=R&version=1.1&viewName=normal"
     res = makeWebhookResult_1(data)
+    '''
+    
+    ShrutiUrl = "https://api.yatra.com/botplatform/flights/search?apikey=4J6CE8N3241kGXujS8DQ"
+    yql_url = ShrutiUrl + "&format=json"
+    result = urlopen(yql_url).read()
+    res = makeWebhookResult_1(result)
+        
     return res
 
 def makeWebhookResult_1(data):

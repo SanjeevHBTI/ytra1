@@ -59,7 +59,6 @@ def processRequest(req):
     yql_url = baseurl + "&format=json"
     result = urlopen(yql_url).read()
     data1 = json.loads(result)
-    
     data = "https://flight.yatra.com/air-search-ui/dom2/trigger?ADT=1&CHD=0&INF=0&arrivalDate=23/11/2017&class=Economy&destination=BOM&destinationCountry=IN&flexi=0&flight_depart_date=22/11/2017&noOfSegments=2&origin=DEL&originCountry=IN&source=fresco-home&type=R&version=1.1&viewName=normal"
     res = makeWebhookResult_1(data)
     '''

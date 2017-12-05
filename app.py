@@ -67,9 +67,9 @@ def processRequest(req):
     yql_url = baseurl + "&format=json"
     result = urlopen(yql_url).read()
     data = json.loads(result)
-    
-    res = makeWebhookResult_1(data['airportName']['DEL'])
-#     res = makeWebhookResult_1(data['data']['content']['address'])
+    data1 = "hello World API"
+#     res = makeWebhookResult_1(data['airportName']['DEL'])
+    res = makeWebhookResult_1(data1)
     return res
 
 def makeWebhookResult_1(data):
